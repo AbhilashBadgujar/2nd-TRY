@@ -32,8 +32,11 @@ public class PlayerSetUp : NetworkBehaviour {
     {
         string ID = " Player " + GetComponent<NetworkIdentity>().netId;
         transform.name = ID;
+<<<<<<< HEAD
     }
 =======
+=======
+>>>>>>> parent of 435c895... player Shooting
     }
 
 >>>>>>> b7b30cfeb624906a0f4818a0de257474ba98c0bc
