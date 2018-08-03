@@ -23,26 +23,15 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
      
-        RegisterPlayer();
-=======
->>>>>>> parent of 7037719... playeer shoot print
     }
 
 
-    }
-=======
-    }
 
->>>>>>> parent of 7037719... playeer shoot print
-=======
-    }
 
->>>>>>> parent of 7037719... playeer shoot print
+
 
     void DisableComponents()
     {
