@@ -25,6 +25,7 @@ public class PlayerSetUp : NetworkBehaviour {
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
      
         RegisterPlayer();
@@ -34,6 +35,10 @@ public class PlayerSetUp : NetworkBehaviour {
 
 
     }
+=======
+    }
+
+>>>>>>> parent of 7037719... playeer shoot print
 =======
     }
 

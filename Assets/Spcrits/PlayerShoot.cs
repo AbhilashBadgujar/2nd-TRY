@@ -39,6 +39,7 @@ public class PlayerShoot : NetworkBehaviour {
             print("hit: " + hit.collider.name);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             if (hit.collider.tag == player_tag)
             {
@@ -57,6 +58,10 @@ public class PlayerShoot : NetworkBehaviour {
 =======
         }
    }
+=======
+        }
+   }
+>>>>>>> parent of 7037719... playeer shoot print
 =======
         }
    }
