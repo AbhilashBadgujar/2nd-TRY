@@ -25,17 +25,13 @@ public class PlayerSetUp : NetworkBehaviour {
         }
 
      
-        
+        RegisterPlayer();
     }
 
-    public override void OnStartClient()
+    void RegisterPlayer()
     {
-        base.OnStartClient();
-
-        string _netID = GetComponent<NetworkIdentity>().netId.ToString();
-        Player player = GetComponent<Player>();
-
-        GM.RegisterPlayer(_netID, player);
+        string ID = " Player " + GetComponent<NetworkIdentity>().netId;
+        transform.name = ID;
     }
 
     }
@@ -59,7 +55,5 @@ public class PlayerSetUp : NetworkBehaviour {
         {
             SceneCam.gameObject.SetActive(true);
         }
-
-        GM.UnRegisterPlayer(transform.name);
     }
 }
