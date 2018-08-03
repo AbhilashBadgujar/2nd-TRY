@@ -23,8 +23,15 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
+     
+        RegisterPlayer();
     }
 
+    void RegisterPlayer()
+    {
+        string ID = " Player " + GetComponent<NetworkIdentity>().netId;
+        transform.name = ID;
+    }
 
     void DisableComponents()
     {
