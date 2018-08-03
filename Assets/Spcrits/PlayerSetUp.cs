@@ -26,12 +26,23 @@ public class PlayerSetUp : NetworkBehaviour {
 
 
      
+<<<<<<< HEAD
     }
 
 
 
 
 
+=======
+        RegisterPlayer();
+    }
+
+    void RegisterPlayer()
+    {
+        string ID = " Player " + GetComponent<NetworkIdentity>().netId;
+        transform.name = ID;
+    }
+>>>>>>> parent of 435c895... player Shooting
 
     void DisableComponents()
     {
