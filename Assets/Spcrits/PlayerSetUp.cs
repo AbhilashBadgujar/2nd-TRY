@@ -23,6 +23,7 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
+<<<<<<< HEAD
      
         
     }
@@ -36,6 +37,10 @@ public class PlayerSetUp : NetworkBehaviour {
 
         GM.RegisterPlayer(_netID, player);
     }
+=======
+    }
+
+>>>>>>> b7b30cfeb624906a0f4818a0de257474ba98c0bc
 
     void DisableComponents()
     {

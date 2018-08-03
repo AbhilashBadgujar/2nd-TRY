@@ -5,10 +5,6 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 public class PlayerShoot : NetworkBehaviour {
-
-
-    const string player_tag = "Player";
-
     public PlayerWeapon playerWeapon;
 
     [SerializeField]
@@ -34,13 +30,13 @@ public class PlayerShoot : NetworkBehaviour {
         }
     }
 
-    [Client]
    void Shoot()
    {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, playerWeapon.range, layer))
         {
             print("hit: " + hit.collider.name);
+<<<<<<< HEAD
             if (hit.collider.tag == player_tag)
             {
                 CmdPlayerShot(hit.collider.name, playerWeapon.damage);
@@ -56,4 +52,8 @@ public class PlayerShoot : NetworkBehaviour {
         Player player =  GM.GetPlayerID(playerID);
         player.TakeDamage(damage);
     }
+=======
+        }
+   }
+>>>>>>> b7b30cfeb624906a0f4818a0de257474ba98c0bc
 }
