@@ -43,14 +43,17 @@ public class PlayerShoot : NetworkBehaviour {
             print("hit: " + hit.collider.name);
             if (hit.collider.tag == player_tag)
             {
-                CmdPlayerShot(hit.collider.name);
+                CmdPlayerShot(hit.collider.name, playerWeapon.damage);
             }
         }
    }
 
     [Command]
-    void CmdPlayerShot(string ID)
+    void CmdPlayerShot(string playerID, int damage)
     {
-        print(ID + "Has been Shot");
+        print(playerID + "Has been Shot");
+
+        Player player =  GM.GetPlayerID(playerID);
+        player.TakeDamage(damage);
     }
 }
