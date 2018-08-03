@@ -37,6 +37,7 @@ public class PlayerShoot : NetworkBehaviour {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, playerWeapon.range, layer))
         {
             print("hit: " + hit.collider.name);
+<<<<<<< HEAD
 
             if (hit.collider.tag == player_tag)
             {
@@ -52,3 +53,8 @@ public class PlayerShoot : NetworkBehaviour {
     }
 
  }
+=======
+        }
+   }
+}
+>>>>>>> parent of 7037719... playeer shoot print

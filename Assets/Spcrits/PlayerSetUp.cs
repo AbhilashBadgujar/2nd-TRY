@@ -23,16 +23,14 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
+<<<<<<< HEAD
 
      
         RegisterPlayer();
+=======
+>>>>>>> parent of 7037719... playeer shoot print
     }
 
-    void RegisterPlayer()
-    {
-        string ID = " Player " + GetComponent<NetworkIdentity>().netId;
-        transform.name = ID;
-    }
 
     }
 
