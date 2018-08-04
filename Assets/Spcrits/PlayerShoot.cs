@@ -12,7 +12,7 @@ public class PlayerShoot : NetworkBehaviour {
 
     [SerializeField]
     LayerMask layer;
-    private string player_tag;
+    private string player_tag = "Player" ;
 
     private void Start()
     {
@@ -30,25 +30,28 @@ public class PlayerShoot : NetworkBehaviour {
             Shoot();
         }
     }
-
-   void Shoot()
-   {
+    [Client]
+    void Shoot()
+    {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, playerWeapon.range, layer))
         {
             print("hit: " + hit.collider.name);
-
             if (hit.collider.tag == player_tag)
             {
-                CmdPlayerShot(hit.collider.name);
+                CmdPlayerShot(hit.collider.name, playerWeapon.damage);
             }
         }
-   }
+    }
 
     [Command]
-    void CmdPlayerShot(string ID)
+    void CmdPlayerShot(string playerID, int damage)
     {
-        print(ID + "Has been Shot");
+        print(playerID + "Has been Shot");
+
+        Player player = GM.GetPlayerID(playerID);
+        player.TakeDamage(damage);
+        
     }
 
  }
