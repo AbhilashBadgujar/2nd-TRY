@@ -7,6 +7,23 @@ using UnityEngine.Networking;
 public class GM : MonoBehaviour
 {
 
+    public static GM gm;
+
+    public MatchSettings matchSettings;
+
+    private void Awake()
+    {
+        if (gm != null)
+        {
+            print("More than one GM");
+        }
+        else
+        {
+            gm = this;
+        }
+    }
+
+    #region ///player tracking
 
     const string PLAYER_ID_PREFIX = "Player ";
     public static Dictionary<string, Player> players = new Dictionary<string, Player>();
@@ -49,4 +66,8 @@ public class GM : MonoBehaviour
     //    GUILayout.EndArea();
 
     //}
+
+#endregion
+
+    
 }

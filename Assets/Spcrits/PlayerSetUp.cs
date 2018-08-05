@@ -23,6 +23,8 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
+
+        GetComponent<Player>().Setup();
     }
 
     public override void OnStartClient()
@@ -34,7 +36,7 @@ public class PlayerSetUp : NetworkBehaviour {
 
         GM.RegisterPlayer(_netID, player);
     }
-        void DisableComponents()
+    void DisableComponents()
     {
         for (int i = 0; i < componentsToDesiable.Length; i++)
         {

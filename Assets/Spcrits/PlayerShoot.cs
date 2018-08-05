@@ -51,7 +51,7 @@ public class PlayerShoot : NetworkBehaviour {
         print(playerID + "Has been Shot");
 
         Player player = GM.GetPlayerID(playerID);
-        player.TakeDamage(damage);
+        player.RpcTakeDamage(damage);
         
     }
 
