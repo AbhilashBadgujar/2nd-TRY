@@ -21,11 +21,17 @@ public class GM : MonoBehaviour
 
     public static void UnRegisterPlayer(string playerID)
     {
-        players.Remove(playerID);
+        //players.Remove(playerID);
     }
 
     public static Player GetPlayerID(string playerID)
     {
+        if (!players.ContainsKey(playerID))
+        {
+            Debug.Log("hey! this played id is no good! " + playerID);
+            return null;
+        }
+
         return players[playerID];
     }
 

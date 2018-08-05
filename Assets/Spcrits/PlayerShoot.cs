@@ -30,6 +30,7 @@ public class PlayerShoot : NetworkBehaviour {
             Shoot();
         }
     }
+
     [Client]
     void Shoot()
     {

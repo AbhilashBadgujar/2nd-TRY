@@ -23,32 +23,23 @@ public class PlayerSetUp : NetworkBehaviour {
             SceneCam = Camera.main;
             SceneCam.gameObject.SetActive(false);
         }
-
-
-     
-<<<<<<< HEAD
     }
 
-
-
-
-
-=======
-        RegisterPlayer();
-    }
-
-    void RegisterPlayer()
+    public override void OnStartClient()
     {
-        string ID = " Player " + GetComponent<NetworkIdentity>().netId;
-        transform.name = ID;
-    }
->>>>>>> parent of 435c895... player Shooting
+        base.OnStartClient();
 
-    void DisableComponents()
+        string _netID = GetComponent<NetworkIdentity>().netId.ToString();
+        Player player = GetComponent<Player>();
+
+        GM.RegisterPlayer(_netID, player);
+    }
+        void DisableComponents()
     {
         for (int i = 0; i < componentsToDesiable.Length; i++)
         {
             componentsToDesiable[i].enabled = false;
+            GM.UnRegisterPlayer(transform.name);
         }
     }
 
